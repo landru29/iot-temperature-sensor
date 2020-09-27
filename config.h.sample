@@ -1,0 +1,20 @@
+// Get the "write" token in graphana topic in the OVH manager
+#define TOKEN "put your OVH metrics token here"
+
+// In the manager, the OpenTSDB server is specified put it here
+#define OPENTSDB_HOST "opentsdb.gra1.metrics.ovh.net"
+
+// In the manager, the Warp10 server is specified put it here
+#define WARP10_HOST "warp10.gra1.metrics.ovh.net"
+
+// SHA1 fingerprint of the certificate
+// Use this script by replacing <HOST> by the host you want to get the fingerprint
+// OPENTSDB=<HOST>; echo | openssl s_client -showcerts -servername ${OPENTSDB} -connect ${OPENTSDB}:443 2>/dev/null | openssl x509 -noout -fingerprint -sha1 -inform pem | sed -e "s/.*=//g" | sed -e "s/\:/ /g"
+#define FINGERPRINT "E5 7E C6 FA FC 55 F7 9A 98 0B 41 A6 63 DF C2 F8 84 F3 4E B1"
+
+// wifi parameters
+#define WIFI_SSID "ssid name"
+#define WIFI_PASSWORD "ssid password"
+
+// Name of the metrics (no spaces in the name)
+#define SENSOR_NAME "sensor_name"
