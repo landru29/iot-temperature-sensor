@@ -2,7 +2,7 @@
 #define __TEMPERATURE__H__
 
 
-#define TEMPERATURE_PIN D4   // on pin D4 (a 4.7K resistor is necessary)
+#define TEMPERATURE_PIN D6   // on pin D4 (a 4.7K resistor is necessary)
 
 
 class Temperature {
