@@ -17,6 +17,10 @@ WifiConnect::WifiConnect() {
   Serial.println("Try to connect");
 }
 
+void WifiConnect::disconnect() {
+  WiFi.disconnect();
+}
+
 bool WifiConnect::connectWithCred(char* ssid, char* password) {
   Serial.print("Connecting to ");
   Serial.println(ssid);

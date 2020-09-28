@@ -22,7 +22,7 @@ void setup() {
   Temperature::searchSensors();
 
   Serial.println("IOT Temperature");
-  myWifi->connectWithCred(WIFI_SSID, WIFI_PASSWORD);
+ 
 
 }
 
@@ -33,7 +33,9 @@ void wait(int seconds) {
 
 void loop() {
   if (ts==0) {
+    myWifi->connectWithCred(WIFI_SSID, WIFI_PASSWORD);
     ts = warp10->getTimestamp();
+    myWifi->disconnect();
   }
   
   if (Temperature::count) {
@@ -47,10 +49,12 @@ void loop() {
   }
 
   if (metricsClient->getBufferSize() > 10) {
+    myWifi->connectWithCred(WIFI_SSID, WIFI_PASSWORD);
     metricsClient->flushData();
     ts = warp10->getTimestamp();
+    myWifi->disconnect();
   }
     
-  wait(5);
+  wait(10);
 
 }
